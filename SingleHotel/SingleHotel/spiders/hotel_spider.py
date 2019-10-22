@@ -5,7 +5,7 @@ import time
 class hotel_spider(scrapy.Spider):
     name = "hotel_comments"
     start_urls = [
-        "https://zh.hotels.com/ho105344-tr-p2/?q-check-in=2019-10-18&q-check-out=2019-10-19&q-rooms=1&q-room-0-adults=2&SYE=3&ZSX=0&MGT=1&YGF=3&WOD=5&WOE=6&applyEmbargo=false&reviewTab=brand-reviews",
+        "https://zh.hotels.com/ho105344-tr/",
     ]
 
     def parse(self, response):
@@ -19,6 +19,6 @@ class hotel_spider(scrapy.Spider):
             reviewItem["date"] = review.css(".date::text").extract_first()
             yield reviewItem
             
-        next = response.css(".pagination-controls a::attr(href)").extract_first()
+        next = response.css("a.cta-next").attrib['href']
         nextURL = "https://zh.hotels.com" + next
         yield scrapy.Request(url = nextURL, callback = self.parse)

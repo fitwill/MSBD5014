@@ -7,7 +7,6 @@
 
 import scrapy
 
-
 class ReviewItem(scrapy.Item):
     # define the fields for your item here like:
     rating_score = scrapy.Field()
