@@ -5,7 +5,8 @@ import time
 class hotel_spider(scrapy.Spider):
     name = "hotel_comments"
     start_urls = [
-        "https://zh.hotels.com/ho105344-tr/",
+        "https://www.hotels.com/ho105344-tr/",
+        
     ]
 
     def parse(self, response):
@@ -20,5 +21,5 @@ class hotel_spider(scrapy.Spider):
             yield reviewItem
             
         next = response.css("a.cta-next").attrib['href']
-        nextURL = "https://zh.hotels.com" + next
+        nextURL = "https://www.hotels.com" + next
         yield scrapy.Request(url = nextURL, callback = self.parse)
