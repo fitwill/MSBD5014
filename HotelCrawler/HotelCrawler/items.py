@@ -7,10 +7,9 @@
 
 import scrapy
 
-class ReviewItem(scrapy.Item):
+# Store the hotel id and hotel name for further crawler work
+
+class HotelItem(scrapy.Item):
     # define the fields for your item here like:
-    hotel_name = scrapy.Field()
-    rating_score = scrapy.Field()
-    rating_badge = scrapy.Field()
-    date = scrapy.Field()
-    description = scrapy.Field()
+    hotelId = scrapy.Field()
+    hotelName = scrapy.Field()  
