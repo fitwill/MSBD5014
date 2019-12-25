@@ -35,12 +35,3 @@ The second crawler is named as "hotel_comments", you can run it by excuting the 
   - *SingleHotel/SingleHotel/spiders/hotel_spider.py*: Code of hotel_comments crawler;
   - *SingleHotel/comments_result.json*: The result of the crawler;
 
-
-
-
-
-
-
-
-
-<img src="/Users/will/Library/Application Support/typora-user-images/image-20191225153058471.png" alt="image-20191225153058471" style="zoom:60%;" />
