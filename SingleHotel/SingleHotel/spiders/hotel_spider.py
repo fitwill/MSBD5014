@@ -21,15 +21,7 @@ class hotel_spider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        # if 'currentIndex' not in response.meta :
-        #     currentIndex = 0
-        # else:
-        #     currentIndex = response.meta['currentIndex']
-        
-
-        # row = self.hotel_df.iloc[self.currentIndex, :]
         reviews = response.css(".review-card")
-        # name = row['hotelName']
 
         for review in reviews:
             reviewItem = ReviewItem()
